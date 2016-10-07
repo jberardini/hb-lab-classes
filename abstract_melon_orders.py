@@ -50,3 +50,13 @@ class InternationalMelonOrder(AbstractMelonOrder):
     def __init__(self, species, qty, country_code):
         super(InternationalMelonOrder, self).__init__(species, qty)
         self.country_code = country_code
+
+class GovernmentMelonOrder(AbstractMelonOrder):
+    """A Government melon order"""
+    passed_inspection = False
+    tax = 0
+    order_type = "Government"
+    def mark_inspection(self):
+        """Set passed_inspection to True"""
+        self.passed_inspection = True
+
